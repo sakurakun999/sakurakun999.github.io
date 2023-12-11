@@ -67,7 +67,7 @@
       <td id="prob6">0%</td>
     </tr>
   </table>
-  <button onclick=resetBtn()>RESET</button>
+  <button onclick="localStorage.clear();alert("local storageをリセットしました。");">RESET</button>
   <script>
   // ボタンの要素を取得
     var buttons = document.getElementById("buttons");
@@ -181,14 +181,6 @@
           prob = Math.round(prob * 100) / 100;
           // 出る確率を表示する
           probElem.textContent = prob + "%";
-      }
-    };
-      // ボタンの要素を取得
-      const resetBtno = document.getElementById("resetBtn");
-        // ボタンがクリックされたときの処理
-        function resetBtno() {
-        localStorage.clear();
-        alert("local storageをリセットしました。");
       }
     });
   </script>
