@@ -183,11 +183,12 @@
           probElem.textContent = prob + "%";
       }
     };
-      
-      // ボタンがクリックされたときの処理
-      function resetBtn() {
-      localStorage.clear();
-      alert("local storageをリセットしました。");
+      // ボタンの要素を取得
+      const resetBtn = document.getElementById("resetBtn");
+        // ボタンがクリックされたときの処理
+        function resetBtn() {
+        localStorage.clear();
+        alert("local storageをリセットしました。");
       }
     });
   </script>
