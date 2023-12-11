@@ -2,73 +2,86 @@
 <html lang = "ja">
 <title>サイコロ</title>
 <head>
-<meta charset = "UTF-8">
-  <style>
-    button {
-      width: 80px;
-      height: 80px;
-      font-size: 20px;
-    }
-    table {
-      border-collapse: collapse;
-    }
-    td {
-      border: 1px solid black;
-      padding: 5px;
-      text-align: center;
-    }
-  </style>
+  <meta charset = "UTF-8">
+  <title>サイコロ</title>
+  <!-- Bulmaのスタイルシートを読み込む -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
 </head>
 <body>
-  <h1>サイコロの確率</h1>
-  <img src="saikoro_145.png">
-  <div id="buttons">
-    <button id="1">1</button>
-    <button id="2">2</button>
-    <button id="3">3</button>
-    <button id="4">4</button>
-    <button id="5">5</button>
-    <button id="6">6</button>
-  </div>
-  <p>入力した回数：<span id="count">0</span></p>
-  <table id="table">
-    <tr>
-      <td>サイコロの目</td>
-      <td>出た回数</td>
-      <td>出る確率</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td id="freq1">0</td>
-      <td id="prob1">0%</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td id="freq2">0</td>
-      <td id="prob2">0%</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td id="freq3">0</td>
-      <td id="prob3">0%</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td id="freq4">0</td>
-      <td id="prob4">0%</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td id="freq5">0</td>
-      <td id="prob5">0%</td>
-    </tr>
-    <tr>
-      <td>6</td>
-      <td id="freq6">0</td>
-      <td id="prob6">0%</td>
-    </tr>
-  </table>
-  <button onclick="localStorage.clear()">RESET</button>
+  <!-- heroコンポーネントでヘッダーを作る -->
+  <section class="hero is-primary">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">サイコロの確率</h1>
+        <h2 class="subtitle">Bulmaでおしゃれに</h2>
+      </div>
+    </div>
+  </section>
+  <!-- sectionでコンテンツの領域を作る -->
+  <section class="section">
+    <div class="container">
+      <!-- columnsでグリッドシステムを使う -->
+      <div class="columns">
+        <!-- columnでカラムを作る -->
+        <div class="column is-one-third">
+          <!-- サイコロの画像 -->
+          <img src="saikoro_145.png">
+        </div>
+        <div class="column">
+          <!-- buttonでボタンを作る -->
+          <div class="buttons">
+            <button id="1" class="button is-info is-large">1</button>
+            <button id="2" class="button is-info is-large">2</button>
+            <button id="3" class="button is-info is-large">3</button>
+            <button id="4" class="button is-info is-large">4</button>
+            <button id="5" class="button is-info is-large">5</button>
+            <button id="6" class="button is-info is-large">6</button>
+          </div>
+          <p>入力した回数：<span id="count">0</span></p>
+          <!-- tableでテーブルを作る -->
+          <table id="table" class="table is-bordered is-striped is-narrow">
+            <tr>
+              <td>サイコロの目</td>
+              <td>出た回数</td>
+              <td>出る確率</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td id="freq1">0</td>
+              <td id="prob1">0%</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td id="freq2">0</td>
+              <td id="prob2">0%</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td id="freq3">0</td>
+              <td id="prob3">0%</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td id="freq4">0</td>
+              <td id="prob4">0%</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td id="freq5">0</td>
+              <td id="prob5">0%</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td id="freq6">0</td>
+              <td id="prob6">0%</td>
+            </tr>
+          </table>
+          <!-- RESETボタン -->
+          <button onclick="localStorage.clear()" class="button is-danger is-outlined">RESET</button>
+        </div>
+      </div>
+    </div>
+  </section>
   <script>
   // ボタンの要素を取得
     var buttons = document.getElementById("buttons");
