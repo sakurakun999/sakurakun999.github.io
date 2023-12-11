@@ -122,7 +122,8 @@
         }
       }
     });
-    // ボタンがクリックされたときの処理
+    // ボタンがクリックされたときの処理!
+    if (!priceGet){ return false;}
     buttons.addEventListener("click", function(event) {
       // クリックされたボタンのIDを取得
       var id = event.target.id;
