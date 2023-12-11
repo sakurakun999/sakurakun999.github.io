@@ -180,6 +180,21 @@
           // 出る確率を表示する
           probElem.textContent = prob + "%";
         }
+    });
+      // ボタンの要素を取得
+      const resetBtn = document.getElementById("resetBtn");
+       // ボタンがクリックされたときの処理
+       resetBtn.onclick = () => {
+      // アラートを表示してユーザーの確認を求める
+        const result = confirm("本当にlocal storageをリセットしますか？");
+
+       // OKが押された場合
+       if (result) {
+       // local storageのデータを全て削除
+      localStorage.clear();
+      // 完了のメッセージを表示
+    alert("local storageをリセットしました。");
+       }
       }
     });
   </script>
