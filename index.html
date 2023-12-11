@@ -67,7 +67,7 @@
       <td id="prob6">0%</td>
     </tr>
   </table>
-   <button id="resetBtn">reset</button>
+  <div id="resetBtn" onclick="resetBtn()">RESET</div>
   <script>
   // ボタンの要素を取得
     var buttons = document.getElementById("buttons");
@@ -183,11 +183,9 @@
           probElem.textContent = prob + "%";
       }
     };
-    
-    // ボタンの要素を取得
-    const resetBtn = document.getElementById("resetBtn");
+      
       // ボタンがクリックされたときの処理
-      resetBtn.onclick = () => {
+      function resetBtn() {
       localStorage.clear();
       alert("local storageをリセットしました。");
       }
